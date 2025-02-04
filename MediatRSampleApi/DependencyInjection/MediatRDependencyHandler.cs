@@ -1,6 +1,10 @@
 namespace MediatRSampleApi.DependencyInjection;
 
-public class MediatRDependencyHandler
+public static class MediatRDependencyHandler
 {
-     
+     public static IServiceCollection RegisterRequestHandlers(this IServiceCollection services)
+     {
+          return services
+               .AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(MediatRDependencyHandler).Assembly));
+     }
 }

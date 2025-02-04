@@ -1,6 +1,18 @@
-@MediatRSampleApi_HostAddress = http://localhost:5041
+@MediatRSampleApi_HostAddress = https://localhost:44351/
+@CustomerId = 0
 
-GET {{MediatRSampleApi_HostAddress}}/weatherforecast/
+GET {{MediatRSampleApi_HostAddress}}/Customer/{{CustomerId}}
 Accept: application/json
+###
 
+POST {{MediatRSampleApi_HostAddress}}/Customer
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstName": "test",
+  "lastName": "test",
+  "emailAddress": "test@test.com",
+  "address": "test"
+}
 ###
